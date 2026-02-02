@@ -17,6 +17,7 @@ import java.util.logging.Filter;
 public class FilterChainExceptionHandler extends OncePerRequestFilter {
 
     @Autowired
+    @Qualifier("handlerExceptionResolver")
     private HandlerExceptionResolver resolver;
 
     @Override

@@ -29,4 +29,7 @@ public class Employee {
     private String password;
 
     private String address;
+
+    @Column(name = "image_url")
+    private String profileImageUrl;
 }

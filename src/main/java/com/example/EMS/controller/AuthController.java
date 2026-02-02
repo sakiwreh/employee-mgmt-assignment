@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/v1/auth")
 public class AuthController {
 
     @PostMapping("/login")
@@ -16,6 +16,7 @@ public class AuthController {
         Cookie cookie = new Cookie("auth_token","demo_token_value");
         cookie.setHttpOnly(true);
         cookie.setPath("/");
+        cookie.setMaxAge(3600);
         response.addCookie(cookie);
         return ResponseEntity.ok("Your login attempt was successfull | Authentication cookie is set.");
     }
